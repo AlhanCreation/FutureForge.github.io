@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Design Mastery | Travel Worldwide</title>
+<style>
+  @media screen and (width > 768px) {
+    .nav__menu__btn{
+      display: none;
+    }
+}
+
+@media  screen and (width < 768px) { 
+  .go{
+    display: none;
+  } 
+  
+} 
+
+
+
+</style>
+   
+  
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__logo">
+          <a href="#">
+            <img src="assets/logo-color.png" alt="logo" class="logo-color" />
+            <img src="assets/logo-white.png" alt="logo" class="logo-white" />
+          </a>
+        </div class="navigation">
+        <ul class="nav__links go" id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a class="btn" id="registerBtn">Register</a>
+          </div></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="nav__menu__btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
+      </nav>
+      <div class="header__container">
+        <div class="header__image"></div>
+        <div class="header__content">
+          <h1>Future</h1>
+          <h2>Forge</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat odio nobis officiis enim sapiente ratione tenetur aperiam vero, quos accusantium cupiditate animi, ullam recusandae. Molestias pariatur aliquam placeat harum eligendi.
+          </p>
+          <div>
+            <button class="btn" id="registerBtn">Register</button>
+          </div>
+         
+        </div>
+      </div>
+      <div>
+    </header>
+
+
+    <section class="home">
+      <div class="form_container form_colse" id="formContainer">
+        <i class="fa-solid fa-x form_close"></i>
+        <div class="form login_form">
+        <form action="#" class="notBlur">
+          <h2>Register</h2>
+
+          <div class="input_box">
+            <input type="name" placeholder=" Enter Your Name">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input_box">
+            <input type="email" placeholder=" Enter Your Email" >
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
+          <div class="input_box">
+            <input type="email" placeholder=" Enter Your Contact Number">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+
+          <button type="submit" class="btn"> Submit </button>
+        </div>
+        </form>
+      </div>
+    </section>
+    <div class="banner">
+      <div class="banner__card">
+        <div class="banner__content">
+          <h2>100%</h2>
+          <h3>Free</h3>
+          <p>Online Webinar</p>
+        </div>
+      </div>
+      <div class="banner__card">
+        <h4>Asian</h4>
+        <p>
+          Asia boasts incredibly diverse landscapes, from the Himalayan mountain
+          and lush tropical rainforests to pristine beaches.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="banner__card">
+        <h4>Europe</h4>
+        <p>
+          A visit to Europe isn't complete without experiencing the charm and
+          significance of this tiny sovereign state within a city!
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="banner__card">
+        <h4>Book Now</h4>
+        <p>
+          Ensure a clean and intuitive design that allows users to easily
+          navigate through the booking process.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
