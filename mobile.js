@@ -28,7 +28,7 @@ headerImage.addEventListener(
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",
-  duration: 1000,
+  duration: 500,
 };
 
 ScrollReveal().reveal(".header__content h1", {
@@ -41,11 +41,11 @@ ScrollReveal().reveal(".header__content h2", {
 });
 ScrollReveal().reveal(".header__content p", {
   ...scrollRevealOption,
-  delay: 1500,
+  delay: 1000,
 });
 ScrollReveal().reveal(".header__content div", {
   ...scrollRevealOption,
-  delay: 200,
+  delay: 0,
 });
 
 ScrollReveal().reveal(".header .nav__links", {
