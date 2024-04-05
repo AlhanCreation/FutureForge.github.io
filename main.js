@@ -33,23 +33,23 @@ const scrollRevealOption = {
 
 ScrollReveal().reveal(".header__content h1", {
   ...scrollRevealOption,
-  delay: 1500,
+  delay: 1000,
 });
 ScrollReveal().reveal(".header__content h2", {
   ...scrollRevealOption,
-  delay: 2000,
+  delay: 1000,
 });
 ScrollReveal().reveal(".header__content p", {
   ...scrollRevealOption,
-  delay: 2500,
+  delay: 1500,
 });
 ScrollReveal().reveal(".header__content div", {
   ...scrollRevealOption,
-  delay: 3000,
+  delay: 2200,
 });
 
 ScrollReveal().reveal(".header .nav__links", {
-  delay: 3500,
+  delay: 0,
 });
 
 
@@ -126,12 +126,5 @@ document.addEventListener("DOMContentLoaded", function() {
     formContainer.style.display = 'none';
   });
 
-  submitBtn.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent the form from submitting (just for demonstration)
-    alert("Successfully Registered");
-    formContainer.style.display = 'none'; // Hide the registration form again
-    registerBtn.innerText = "ALL SET"; // Change text of registerBtn
-    // Here you can add code to submit the form data to your server if needed
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  
 });

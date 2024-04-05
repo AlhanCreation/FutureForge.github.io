@@ -55,8 +55,9 @@
         <div class="header__content">
           <h1>Future</h1>
           <h2>Forge</h2>
+          <br>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat odio nobis officiis enim sapiente ratione tenetur aperiam vero, quos accusantium cupiditate animi, ullam recusandae. Molestias pariatur aliquam placeat harum eligendi.
+            A Future Forge is a online platform that helps students make informed decisions about their future careers by providing information, tools, and resources. <p>let's kick start your career by taping on Register &#x2665; </p> 
           </p>
           <div>
             <button class="btn" id="registerBtn">Register</button>
@@ -72,26 +73,26 @@
       <div class="form_container form_colse" id="formContainer">
         <i class="fa-solid fa-x form_close"></i>
         <div class="form login_form">
-        <form action="#" class="notBlur">
+        <form action="#" class="notBlur" onsubmit="sendEmail(event)" !important >
           <h2>Register</h2>
 
           <div class="input_box">
-            <input type="name" placeholder=" Enter Your Name">
+            <input type="name" placeholder=" Enter Your Name" id="exampleInputName">
             <i class="fa-solid fa-user"></i>
           </div>
           <div class="input_box">
-            <input type="email" placeholder=" Enter Your Email" >
+            <input type="email" placeholder=" Enter Your Email" id="exampleInputEmail" >
             <i class="fa-solid fa-envelope"></i>
           </div>
 
           <div class="input_box">
-            <input type="email" placeholder=" Enter Your Contact Number">
+            <input type="number" placeholder=" Enter Your Contact Number" id="exampleInputNumber" >
             <i class="fa-solid fa-phone"></i>
           </div>
 
-          <button type="submit" class="btn"> Submit </button>
         </div>
-        </form>
+        <button type="submit" class="btn" > Submit </button>
+         </form>
       </div>
     </section>
     <div class="banner">
@@ -103,32 +104,108 @@
         </div>
       </div>
       <div class="banner__card">
-        <h4>Asian</h4>
-        <p>
-          Asia boasts incredibly diverse landscapes, from the Himalayan mountain
-          and lush tropical rainforests to pristine beaches.
+        <h3>Facilities:</h3>
+
+        <p style="font-size: 17px">
+          • University and College Information<br>
+          • Information Hub<br>
+          • Expert Advice<br>
+          • Financial Aid and Scholarships<br>
         </p>
-        <a href="#">Read More</a>
+        <!-- <a href="#">Read More</a> -->
       </div>
       <div class="banner__card">
-        <h4>Europe</h4>
-        <p>
-          A visit to Europe isn't complete without experiencing the charm and
-          significance of this tiny sovereign state within a city!
-        </p>
-        <a href="#">Read More</a>
+        <h3>Benifits:</h3>
+        <p style="font-size: 17px">
+          • One-to-one interaction<br>
+          • 100% Free<br>
+          • Community Support<br>
+          • Regular Updates and News
+      </p>
       </div>
       <div class="banner__card">
-        <h4>Book Now</h4>
+        <h3>Contact Us</h3>
         <p>
-          Ensure a clean and intuitive design that allows users to easily
-          navigate through the booking process.
-        </p>
-        <a href="#">Read More</a>
+        <i class="fa-brands fa-whatsapp fa-xl"></i>
+        <a href="#">WhatsApp</a><br>
+        <i class="fa-regular fa-envelope fa-xl"></i>
+        <a href="#">Gmail</a><br>
+        <i class="fa-brands fa-instagram fa-xl"></i></i>
+        <a href="#">Instragram</a><br>
+        <!-- <i class="fa-brands fa-linkedin fa-xl"></i>
+        <a href="#">Linkedin</a><br>
+        <i class="fa-brands fa-facebook fa-xl"></i>
+        <a href="#">Facebook</a><br>
+        <a href="#">Read More</a> -->
       </div>
     </div>
 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail(e) {
+        e.preventDefault();
+
+        // Get user inputs
+        var emailInput = document.getElementById('exampleInputEmail');
+        var nameInput = document.getElementById('exampleInputName');
+        const registerBtn = document.getElementById("registerBtn");
+
+
+        // Validate email input
+        if (!validateEmail(emailInput.value)) {
+            alert("Please enter a valid email address");
+            return;
+        }
+
+        // Send email
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "alhanapsiddique@gmail.com",
+            Password: "FB7493BDE5B482999236D4A308189C4272E9", // Consider more secure storage options
+            To: emailInput.value,
+            From: 'alhanapsiddique@gmail.com',
+            Subject: "FutureForge Registration",
+            Body: `Dear ${nameInput.value}, &nbsp; Congratulations! You &nbsp; have &nbsp; successfully &nbsp;registered &nbsp; for &nbsp; our &nbsp; upcoming &nbsp; online &nbsp; webinar. &nbsp; We &nbsp; are &nbsp; thrilled &nbsp; to &nbsp; have &nbsp; you &nbsp; join &nbsp; us &nbsp; for &nbsp; this &nbsp; insightful &nbsp; session.`,
+            // &nbsp;&nbsp;Here are the details you need to know:&nbsp;&nbsp;Webinar Title: How to choose best among best!!&nbsp;Date: 00/00/2024&nbsp;Time: 10:10AM ISD&nbsp;Duration: 60 minutes can secure your future&nbsp;Platform: ZOOM&nbsp;We're excited to share valuable insights, engage in meaningful discussions, and provide you with resources that will enhance your understanding of [topic or theme of the webinar].&nbsp;&nbsp;Please mark your calendar for the scheduled date and time. If you have any questions or need further assistance, feel free to reach out to us at [contact email or WhatsApp].&nbsp;&nbsp;Thank you once again for registering. We look forward to seeing you at the webinar!&nbsp;&nbsp;Best regards,&nbsp;Future Forge
+            //Attachments: [
+            //     {
+            //         name: 'data.csv',
+            //         data: base64Content,
+            //     }
+            // ]
+        }).then(
+            message => {
+                // Handle success and error messages
+                alert("Email sent successfully!");
+                formContainer.style.display = 'none'; // Hide the registration form again
+                registerBtn.innerText = "ALL SET";// Change text of registerBtn
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                registerBtn.disabled = true;
+            },
+            error => {
+                alert("Error sending email: " + error);
+            }
+        );
+    }
+
+    submitBtn.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the form from submitting (just for demonstration)
+    // alert("Successfully Registered");
+    // formContainer.style.display = 'none'; // Hide the registration form again
+    // registerBtn.innerText = "ALL SET"; // Change text of registerBtn
+    // Here you can add code to submit the form data to your server if needed
     
+  });
+  
+    // Function to validate email address
+    function validateEmail(email) {
+        // Regular expression for basic email validation
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+</script>
+
+
     
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
