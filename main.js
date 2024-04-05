@@ -45,7 +45,7 @@ ScrollReveal().reveal(".header__content p", {
 });
 ScrollReveal().reveal(".header__content div", {
   ...scrollRevealOption,
-  delay: 2200,
+  delay: 200,
 });
 
 ScrollReveal().reveal(".header .nav__links", {
